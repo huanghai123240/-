@@ -1,0 +1,15 @@
+.container { min-height: 100vh; background: #f5f5f5; padding-bottom: 160rpx; box-sizing: border-box; }
+.form-card { background: #fff; margin: 20rpx 24rpx; border-radius: 16rpx; overflow: hidden; }
+.form-item { display: flex; align-items: center; padding: 28rpx; border-bottom: 1rpx solid #f0f0f0; }
+.form-item:last-child { border-bottom: none; }
+.form-item--textarea { align-items: flex-start; }
+.label { width: 160rpx; font-size: 30rpx; color: #333; flex-shrink: 0; }
+.input { flex: 1; font-size: 30rpx; color: #333; text-align: right; }
+.input::placeholder, .textarea::placeholder { color: #bbb; }
+.region-value { flex: 1; font-size: 30rpx; color: #333; text-align: right; margin-right: 12rpx; }
+.region-value.placeholder { color: #bbb; }
+.arrow { width: 24rpx; height: 24rpx; opacity: 0.4; }
+.textarea { flex: 1; font-size: 28rpx; color: #333; line-height: 1.6; min-height: 80rpx; }
+.bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 20rpx 32rpx; padding-bottom: calc(20rpx + env(safe-area-inset-bottom)); background: #fff; box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.05); }
+.btn-save { width: 100%; height: 88rpx; line-height: 88rpx; background: linear-gradient(135deg, #ff8a00, #ff6700); color: #fff; font-size: 32rpx; border-radius: 44rpx; border: none; }
+.btn-save::after { border: none; }

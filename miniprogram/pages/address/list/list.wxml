@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="address-list" wx:if="{{addressList.length > 0}}">
+    <view class="address-item {{selectedId === item.id ? 'selected' : ''}}" wx:for="{{addressList}}" wx:key="id" bindtap="onSelectAddress" data-id="{{item.id}}">
+      <view class="item-main">
+        <view class="item-top">
+          <text class="name">{{item.name}}</text>
+          <text class="phone">{{item.phone}}</text>
+          <text class="default-tag" wx:if="{{item.isDefault}}">默认</text>
+        </view>
+        <view class="item-region">{{item.regionText}}</view>
+        <view class="item-detail">{{item.detail}}</view>
+      </view>
+      <view class="item-actions">
+        <view class="radio" wx:if="{{isSelectMode}}">
+          <view class="radio-inner" wx:if="{{selectedId === item.id}}"></view>
+        </view>
+        <view class="action-btns">
+          <view class="action-btn" bindtap="onEdit" data-id="{{item.id}}" catchtap="true">
+            <image class="action-icon" src="/images/edit.png" mode="aspectFit" /><text>编辑</text>
+          </view>
+          <view class="action-btn" bindtap="onDelete" data-id="{{item.id}}" catchtap="true">
+            <image class="action-icon" src="/images/delete.png" mode="aspectFit" /><text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty-state" wx:else>
+    <image class="empty-icon" src="/images/empty-address.png" mode="aspectFit" />
+    <view class="empty-text">暂无收货地址</view>
+    <view class="empty-tip">添加新收货地址，方便快速下单</view>
+  </view>
+  <view class="bottom-bar">
+    <button class="btn-add" bindtap="onAdd">新增收货地址</button>
+  </view>
+</view>
